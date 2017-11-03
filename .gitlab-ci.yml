@@ -3,6 +3,10 @@ image: golang:1.8
 stages:
   - test
 
+before_script:
+  - ln -s /builds/psheets/ /go/src/gitlab.com/psheets
+  - go get github.com/PuerkitoBio/goquery
+
 test-my-project:
   stage: test
   script:
