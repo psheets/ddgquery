@@ -1,10 +1,15 @@
 image: golang:1.8
 
+variables:
+  GO_PROJECT: gitlab.com/psheets/ddgquery
+
 stages:
   - test
 
 before_script:
-  - ln -s /builds/psheets/ddgquery /go/src/gitlab.com/psheets/ddgquery
+  - mkdir -p ${GOPATH}/src/${GO_PROJECT}
+  - mkdir -p ${CI_PROJECT_DIR}/${ARTIFACTS_DIR}
+  - cp -r ${CI_PROJECT_DIR}/* ${GOPATH}/src/${GO_PROJECT}
   - go get github.com/PuerkitoBio/goquery/
 
 
