@@ -1,0 +1,9 @@
+image: golang:1.8
+
+stages:
+  - test
+
+test-my-project:
+  stage: test
+  script:
+    - go test -v -cover
