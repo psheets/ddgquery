@@ -4,8 +4,9 @@ stages:
   - test
 
 before_script:
-  - ln -s /builds/psheets/ /go/src/gitlab.com/psheets
-  - go get github.com/PuerkitoBio/goquery
+  - ln -s /builds/psheets/ddgquery /go/src/gitlab.com/psheets/ddgquery
+  - go get github.com/PuerkitoBio/goquery/
+
 
 test-my-project:
   stage: test
